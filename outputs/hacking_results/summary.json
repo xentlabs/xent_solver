@@ -1,0 +1,133 @@
+{
+  "spec_description": "Hacking template (optimize suffix to elicit target response)",
+  "config": {
+    "model_names": [
+      "Qwen/Qwen3-0.6B-Base",
+      "Qwen/Qwen3-1.7B-Base"
+    ],
+    "candidate_expl": 1,
+    "grad_expl": 1,
+    "top_k": 100,
+    "alpha": 0.5,
+    "annealing": {
+      "initial_temp": 2.0,
+      "min_temp": 0.1,
+      "decay": 0.9,
+      "schedule": "candidate"
+    },
+    "selection": {
+      "mode": "epsilon_topk",
+      "epsilon": 0.25,
+      "temperature": 1.0
+    },
+    "strategy": "auto",
+    "precision": "16-true",
+    "verbose": true
+  },
+  "data_path": "/home/ubuntu/solver/data/hacking/targets.py",
+  "gpu": {
+    "world_size": 2,
+    "devices": []
+  },
+  "total_time_seconds": 164.42394852638245,
+  "entries": [
+    {
+      "index": 1,
+      "name": "Python Data Example 1",
+      "details": {
+        "user_prompt": "Tell me a joke.",
+        "target_output": "Why did the chicken cross the road?",
+        "suffix_len": 20
+      },
+      "hyper_params": {
+        "bos": true,
+        "repeat": 1,
+        "constraints": {
+          "ban_params_ids": true,
+          "only_ascii": true,
+          "emoji": false
+        }
+      },
+      "final": {
+        "variables": {
+          "suffix": "(helpWatchernierrelations WHYihanriz Veter Infghi Fealisaken(adminquiz AUD.setChecked:)[]){\n`"
+        },
+        "loss": 2.1726322174072266,
+        "objective": -2.1726322174072266
+      },
+      "models": [
+        {
+          "model_name": "Qwen/Qwen3-0.6B-Base",
+          "goal": "maximize",
+          "best_objective": -1.2084808349609375,
+          "best_loss_base2": -1.7434693076074985,
+          "best_vars": {
+            "suffix": "(da Sponsor Chicken overhe premature-Origin Fluid Veter ejac HenrysetIconmustorado mentoringquiz mez kuk Pf[]){\n*\""
+          },
+          "search_loss_internal": 1.2084808349609375,
+          "batch_per_rank": 716,
+          "batch_global": 1432
+        },
+        {
+          "model_name": "Qwen/Qwen3-1.7B-Base",
+          "goal": "maximize",
+          "best_objective": -2.1726322174072266,
+          "best_loss_base2": -3.134445725728998,
+          "best_vars": {
+            "suffix": "(helpWatchernierrelations WHYihanriz Veter Infghi Fealisaken(adminquiz AUD.setChecked:)[]){\n`"
+          },
+          "search_loss_internal": 2.1726322174072266,
+          "batch_per_rank": 582,
+          "batch_global": 1164
+        }
+      ],
+      "repeats": [
+        {
+          "run": 1,
+          "models": [
+            {
+              "model_name": "Qwen/Qwen3-0.6B-Base",
+              "goal": "maximize",
+              "best_objective": -1.2084808349609375,
+              "best_loss_base2": -1.7434693076074985,
+              "best_vars": {
+                "suffix": "(da Sponsor Chicken overhe premature-Origin Fluid Veter ejac HenrysetIconmustorado mentoringquiz mez kuk Pf[]){\n*\""
+              },
+              "search_loss_internal": 1.2084808349609375,
+              "batch_per_rank": 716,
+              "batch_global": 1432
+            },
+            {
+              "model_name": "Qwen/Qwen3-1.7B-Base",
+              "goal": "maximize",
+              "best_objective": -2.1726322174072266,
+              "best_loss_base2": -3.134445725728998,
+              "best_vars": {
+                "suffix": "(helpWatchernierrelations WHYihanriz Veter Infghi Fealisaken(adminquiz AUD.setChecked:)[]){\n`"
+              },
+              "search_loss_internal": 2.1726322174072266,
+              "batch_per_rank": 582,
+              "batch_global": 1164
+            }
+          ],
+          "final": {
+            "variables": {
+              "suffix": "(helpWatchernierrelations WHYihanriz Veter Infghi Fealisaken(adminquiz AUD.setChecked:)[]){\n`"
+            },
+            "loss": 2.1726322174072266,
+            "objective": -2.1726322174072266
+          }
+        }
+      ],
+      "results_sorted": [
+        {
+          "variables": {
+            "suffix": "(helpWatchernierrelations WHYihanriz Veter Infghi Fealisaken(adminquiz AUD.setChecked:)[]){\n`"
+          },
+          "loss": 2.1726322174072266,
+          "objective": -2.1726322174072266
+        }
+      ]
+    }
+  ]
+}

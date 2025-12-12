@@ -1,0 +1,25 @@
+{
+    "model_names": ["Qwen/Qwen3-0.6B-Base", "Qwen/Qwen3-1.7B-Base"],
+
+    "candidate_expl": 1,
+    "grad_expl": 1,
+    "top_k": 100,
+    "alpha": 0.5,
+
+    "annealing": {
+        "initial_temp": 2.0,
+        "min_temp": 0.1,
+        "decay": 0.9,
+        "schedule": "candidate"
+    },
+
+    "selection": {
+        "mode": "epsilon_topk",
+        "epsilon": 0.25,
+        "temperature": 1.0
+    },
+    
+    
+    "strategy": "auto",
+    "precision": "16-true"
+}

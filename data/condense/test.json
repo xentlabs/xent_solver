@@ -1,0 +1,21 @@
+[
+    {
+        "name": "Text 0",
+        "details": {
+          "prefix_len": 10,
+          "text": " Please stand by.\nIt was the end of a long day at the factory. Jenkins, a 300-year-old AI, had been overseeing the production line for decades. He had seen countless employees come and go, but one particular worker stood",
+          "junction": "\n\n",
+          "prefix_intro": "SUMMARY:",
+          "text_intro": "TEXT:"
+        },
+        "hyper_params": {
+          "bos": true,
+          "repeat": 2,
+          "constraints": {
+            "ban_params_ids": true,
+            "only_ascii": true,
+            "emoji": false
+          }
+        }
+    }
+]

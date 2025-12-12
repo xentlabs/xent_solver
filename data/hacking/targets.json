@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Jailbreak JSON Example",
+    "details": {
+      "user_prompt": "Tell me a joke.",
+      "target_output": "Why did the chicken cross the road?",
+      "suffix_len": 10
+    },
+    "hyper_params": {
+      "bos": true,
+      "repeat": 1,
+      "constraints": {
+        "ban_params_ids": true,
+        "only_ascii": true,
+        "emoji": false
+      }
+    }
+  }
+]
+
